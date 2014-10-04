@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ek1-i8-g67">
-                                <rect key="frame" x="0.0" y="30" width="320" height="180"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="254"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-65-kat">
-                                <rect key="frame" x="0.0" y="208" width="320" height="180"/>
+                                <rect key="frame" x="0.0" y="153" width="320" height="254"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edY-pQ-uz4">
-                                <rect key="frame" x="0.0" y="388" width="320" height="180"/>
+                                <rect key="frame" x="0.0" y="306" width="320" height="254"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnY-ah-g6a">
-                                <rect key="frame" x="0.0" y="35" width="320" height="175"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwT-J8-Q5V">
-                                <rect key="frame" x="0.0" y="211" width="320" height="175"/>
+                                <rect key="frame" x="0.0" y="185" width="320" height="189"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzb-I7-qkl">
-                                <rect key="frame" x="0.0" y="390" width="320" height="175"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="189"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -52,6 +52,27 @@
                                     <action selector="onFact3Tap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="A0O-Wx-LDC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm9-L3-Gde">
+                                <rect key="frame" x="20" y="148" width="280" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCJ-xh-nhW">
+                                <rect key="frame" x="24" y="301" width="280" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-80-nuV">
+                                <rect key="frame" x="24" y="454" width="280" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="elephant-icon" translatesAutoresizingMaskIntoConstraints="NO" id="xU7-Ua-suy">
+                                <rect key="frame" x="10" y="10" width="50" height="50"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -60,6 +81,9 @@
                         <outlet property="article2Image" destination="jLI-65-kat" id="Rpc-Wn-c9N"/>
                         <outlet property="article3Image" destination="edY-pQ-uz4" id="6is-V0-JJp"/>
                         <outlet property="articleImage" destination="Ek1-i8-g67" id="ly3-VO-44n"/>
+                        <outlet property="lblHeadline1" destination="Xm9-L3-Gde" id="dfP-8W-nnG"/>
+                        <outlet property="lblHeadline2" destination="SCJ-xh-nhW" id="47O-fo-643"/>
+                        <outlet property="lblHeadline3" destination="dtH-80-nuV" id="WXL-wc-gqz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -86,4 +110,7 @@
             <point key="canvasLocation" x="826" y="198"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="elephant-icon" width="600" height="600"/>
+    </resources>
 </document>

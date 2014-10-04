@@ -19,6 +19,12 @@
 @property (nonatomic,strong) PFObject *factObj1;
 @property (nonatomic,strong) PFObject *factObj2;
 @property (nonatomic,strong) PFObject *factObj3;
+- (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage;
+@property (weak, nonatomic) IBOutlet UILabel *lblHeadline1;
+@property (weak, nonatomic) IBOutlet UILabel *lblHeadline2;
+@property (weak, nonatomic) IBOutlet UILabel *lblHeadline3;
+
+
 - (IBAction)onFact1Tap:(id)sender;
 - (IBAction)onFact2Tap:(id)sender;
 - (IBAction)onFact3Tap:(id)sender;
@@ -26,6 +32,21 @@
 @end
 
 @implementation ViewController
+- (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage {
+    
+    CGImageRef maskRef = maskImage.CGImage;
+    
+    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
+                                        CGImageGetHeight(maskRef),
+                                        CGImageGetBitsPerComponent(maskRef),
+                                        CGImageGetBitsPerPixel(maskRef),
+                                        CGImageGetBytesPerRow(maskRef),
+                                        CGImageGetDataProvider(maskRef), NULL, false);
+    
+    CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
+    return [UIImage imageWithCGImage:masked];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -89,7 +110,14 @@
                 [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     if (!error) {
                         UIImage *image = [UIImage imageWithData:data];
-                        self.articleImage.image = image;
+                        UIImage *maskingImage = [UIImage imageNamed:@"maskImage"];
+                        //maskingImage
+                        
+                        self.articleImage.image = [self maskImage:image withMask:maskingImage];
+                        self.lblHeadline1.text = self.factObj1[@"Headline"];
+                        self.lblHeadline1.transform = CGAffineTransformMakeRotation(-17 * M_PI / 180.0);
+
+                        //self.articleImage.image = image;
                     }
                 }];
                 
@@ -104,7 +132,15 @@
                 [image2File getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     if (!error) {
                         UIImage *image = [UIImage imageWithData:data];
-                        self.article2Image.image = image;
+                        
+                        UIImage *maskingImage = [UIImage imageNamed:@"maskImage"];
+                        self.article2Image.image = [self maskImage:image withMask:maskingImage];
+
+                        self.lblHeadline2.text = self.factObj2[@"Headline"];
+                        self.lblHeadline2.transform = CGAffineTransformMakeRotation(-17 * M_PI / 180.0);
+
+                        
+                        //self.article2Image.image = image;
                     }
                 }];
                 
@@ -119,7 +155,13 @@
                 [image3File getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     if (!error) {
                         UIImage *image = [UIImage imageWithData:data];
-                        self.article3Image.image = image;
+                        //self.article3Image.image = image;
+                        UIImage *maskingImage = [UIImage imageNamed:@"maskImage"];
+                        self.article3Image.image = [self maskImage:image withMask:maskingImage];
+
+                        self.lblHeadline3.text = self.factObj3[@"Headline"];
+                        self.lblHeadline3.transform = CGAffineTransformMakeRotation(-17 * M_PI / 180.0);
+                        
                     }
                 }];
 
@@ -161,6 +203,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
 
 - (IBAction)onFact1Tap:(id)sender {
     NSLog(@"fact1 tapped");
