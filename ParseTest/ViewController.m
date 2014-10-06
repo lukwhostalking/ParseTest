@@ -11,8 +11,6 @@
 #import "fact1ViewController.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) IBOutlet UIView *homeVC;
-@property (weak, nonatomic) IBOutlet UIView *yellowVC;
 @property (weak, nonatomic) IBOutlet UILabel *lblTest;
 //@property (weak, nonatomic) IBOutlet UIWebView *testView;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
@@ -21,14 +19,10 @@
 @property (nonatomic,strong) PFObject *factObj1;
 @property (nonatomic,strong) PFObject *factObj2;
 @property (nonatomic,strong) PFObject *factObj3;
-
-@property (nonatomic,strong) UIImage *image1;
-
 - (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage;
 @property (weak, nonatomic) IBOutlet UILabel *lblHeadline1;
 @property (weak, nonatomic) IBOutlet UILabel *lblHeadline2;
 @property (weak, nonatomic) IBOutlet UILabel *lblHeadline3;
-- (void) loadFactViewController;
 
 
 - (IBAction)onFact1Tap:(id)sender;
@@ -73,7 +67,6 @@
 //    gameScore[@"cheatMode"] = @NO;
 //    [gameScore saveInBackground];
     
-    [self.view bringSubviewToFront:self.homeVC];
 
 
     PFQuery *query = [PFQuery queryWithClassName:@"Facts"];
@@ -117,9 +110,6 @@
                 [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     if (!error) {
                         UIImage *image = [UIImage imageWithData:data];
-                        //assigning fact 1 image to global variable image1
-                        self.image1 = image;
-                        
                         UIImage *maskingImage = [UIImage imageNamed:@"maskImage"];
                         //maskingImage
                         
@@ -220,58 +210,12 @@
 
 - (IBAction)onFact1Tap:(id)sender {
     NSLog(@"fact1 tapped");
-    
-    
     fact1ViewController *fact1VC = [[fact1ViewController alloc]init];
-    
-    //fact1VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    fact1VC.fact = self.factObj1;
-    [self.yellowVC addSubview:fact1VC.view];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        
-        [self.article2Image setFrame:CGRectMake(0, 1140, 320, 254)];
-        [self.article3Image setFrame:CGRectMake(0, 1140, 320, 254)];
-        NSLog(@"in animation block");
-        
-        
-    }];
-    
-    
-    self.articleImage.image = self.image1;
-    self.lblHeadline1.hidden = TRUE;
-    
-    
-    
-    [self.view bringSubviewToFront:self.yellowVC];
 
-    
-    //[self performSelector:@selector (loadFactViewController) withObject:nil afterDelay:0.5];
-    
-    //[self prese]
-    
-    
-
-    
-    
-    
-}
-
-- (void) loadFactViewController{
-    
-    fact1ViewController *fact1VC = [[fact1ViewController alloc]init];
-    
-    //fact1VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    fact1VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     fact1VC.fact = self.factObj1;
     
-    self.article2Image.hidden = TRUE;
-    self.article3Image.hidden = TRUE;
-    [self.yellowVC addSubview:fact1VC.view];
-    
-    //[self.view bringSubviewToFront:self.yellowVC];
-    
-
-    //[self presentViewController:fact1VC animated:YES completion:Nil];
+    [self presentViewController:fact1VC animated:YES completion:Nil];
     
 }
 
@@ -279,13 +223,9 @@
     NSLog(@"fact2 tapped");
     fact1ViewController *fact2VC = [[fact1ViewController alloc]init];
     
-    fact2VC.modalTransitionStyle = UIModalPresentationFormSheet;
+    fact2VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     fact2VC.fact = self.factObj2;
-    
-    //[self reloadInputViews];
-    
-    
     
     [self presentViewController:fact2VC animated:YES completion:Nil];
     
