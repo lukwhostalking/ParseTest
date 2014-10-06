@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //self.factImage = self.fact
-    NSLog(@"%@",self.fact);
+    //NSLog(@"%@",self.fact);
     
     PFFile *imageFile = [self.fact objectForKey:@"Image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
