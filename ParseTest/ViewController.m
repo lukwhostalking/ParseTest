@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *yellowVC;
 @property (weak, nonatomic) IBOutlet UILabel *lblTest;
 //@property (weak, nonatomic) IBOutlet UIWebView *testView;
+@property (weak, nonatomic) IBOutlet UIView *masterVC;
 @property (weak, nonatomic) IBOutlet UIImageView *articleImage;
 @property (weak, nonatomic) IBOutlet UIImageView *article2Image;
 @property (weak, nonatomic) IBOutlet UIImageView *article3Image;
@@ -73,7 +74,7 @@
 //    gameScore[@"cheatMode"] = @NO;
 //    [gameScore saveInBackground];
     
-    [self.view bringSubviewToFront:self.homeVC];
+    //[self.view bringSubviewToFront:self.homeVC];
 
 
     PFQuery *query = [PFQuery queryWithClassName:@"Facts"];
@@ -224,11 +225,11 @@
     
     fact1ViewController *fact1VC = [[fact1ViewController alloc]init];
     
-    //fact1VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    fact1VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     fact1VC.fact = self.factObj1;
     [self.yellowVC addSubview:fact1VC.view];
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:1.5 animations:^{
         
         [self.article2Image setFrame:CGRectMake(0, 1140, 320, 254)];
         [self.article3Image setFrame:CGRectMake(0, 1140, 320, 254)];
@@ -243,10 +244,10 @@
     
     
     
-    [self.view bringSubviewToFront:self.yellowVC];
+    //[self.masterVC bringSubviewToFront:self.yellowVC];
 
     
-    //[self performSelector:@selector (loadFactViewController) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector (loadFactViewController) withObject:nil afterDelay:0.5];
     
     //[self prese]
     
@@ -259,16 +260,16 @@
 
 - (void) loadFactViewController{
     
-    fact1ViewController *fact1VC = [[fact1ViewController alloc]init];
+    //fact1ViewController *fact1VC = [[fact1ViewController alloc]init];
     
     //fact1VC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    fact1VC.fact = self.factObj1;
+    //fact1VC.fact = self.factObj1;
     
-    self.article2Image.hidden = TRUE;
-    self.article3Image.hidden = TRUE;
-    [self.yellowVC addSubview:fact1VC.view];
+    //self.article2Image.hidden = TRUE;
+    //self.article3Image.hidden = TRUE;
+    //[self.yellowVC addSubview:fact1VC.view];
     
-    //[self.view bringSubviewToFront:self.yellowVC];
+    [self.masterVC bringSubviewToFront:self.yellowVC];
     
 
     //[self presentViewController:fact1VC animated:YES completion:Nil];

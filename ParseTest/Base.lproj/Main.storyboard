@@ -23,7 +23,7 @@
                                         <rect key="frame" x="20" y="17" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJA-1T-r5y">
+                                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJA-1T-r5y">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="601"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ek1-i8-g67">
@@ -84,7 +84,6 @@
                                                 <rect key="frame" x="30" y="30" width="50" height="50"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,7 +100,7 @@
                         <outlet property="lblHeadline1" destination="Xm9-L3-Gde" id="dfP-8W-nnG"/>
                         <outlet property="lblHeadline2" destination="SCJ-xh-nhW" id="47O-fo-643"/>
                         <outlet property="lblHeadline3" destination="dtH-80-nuV" id="WXL-wc-gqz"/>
-                        <outlet property="masterVC" destination="d1s-Yq-5Kw" id="3pk-cd-1gK"/>
+                        <outlet property="masterVC" destination="d1s-Yq-5Kw" id="zLu-vT-vOH"/>
                         <outlet property="yellowVC" destination="fgo-6W-jRJ" id="WcR-Gd-8mB"/>
                     </connections>
                 </viewController>
